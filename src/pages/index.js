@@ -1,21 +1,36 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { Component } from 'react'
+import styled from 'styled-components';
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
+import SocialLayer from '../components/SocialLayer';
+import InternetLayer from '../components/InternetLayer';
+import Button from '../components/Button';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const StyledParallax = styled(Parallax)`
+  left: 0;
+  top: 0;
+  overflow: scroll;
+`
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+
+class IndexPage extends Component {
+
+  clickHandler = num => {
+    this.parallax.scrollTo(num)
+  }
+
+  render() {
+    return (
+      <Layout>
+        <StyledParallax ref={ref => (this.parallax = ref)} pages={3}>
+          <SocialLayer clickHandler={this.clickHandler} />
+          <InternetLayer clickHandler={this.clickHandler} />
+        </StyledParallax>
+      </Layout>
+    )
+  }
+}
 
 export default IndexPage
+
