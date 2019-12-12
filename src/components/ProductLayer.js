@@ -7,36 +7,49 @@ import Wave1 from '../images/product-wave-1.inline.svg';
 import Wave2 from '../images/product-wave-2.inline.svg';
 import Button from '../components/Button';
 
+import { device } from '../utils/devices';
+
 const BgLayer = styled(ParallaxLayer)`
 	background: #479887;
 `
 
 const ContentLayer = styled(ParallaxLayer)`
 	display: grid;
-	grid-template-columns: 50% 50%;
-	grid-gap: 60px;
+	grid-template-columns: 1fr;
+	padding: 0 3rem;
 	align-items: center;
 	justify-items: center;
 	z-index: 11;
+
+	@media ${device.lg} {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 6rem;
+		padding: 0;
+	}
 `
 
 const Content = styled.div`
 	grid-column: 1/2;
-	width: 50%;
+	width: 100%;
+
+	@media ${device.lg} {
+		width: 80%;
+		margin-left: 6rem;
+	}
 
 	h1 {
-		font-size: 50px;
+		font-size: 5rem;
 		text-transform: capitalize;
 		line-height: 1.1;
 		color: #ffffff;
-		margin-bottom: 30px;
+		margin-bottom: 3rem;
 	}
 
 	p {
-		font-size: 24px;
+		font-size: 2.4rem;
 		line-height: 1.45;
 		color: #ffffff;
-		margin-bottom: 30px;
+		margin-bottom: 3rem;
 	}
 `
 
@@ -50,7 +63,7 @@ const PersonLayer = styled(ParallaxLayer)`
 	svg {
 		grid-column: 2/3;
 		max-width: 100%;
-		width: 500px;
+		width: 50rem;
 		height: auto;
 	}
 `
@@ -94,6 +107,11 @@ const Wave2Layer = styled(ParallaxLayer)`
 	width: 100%;
 	height: 100%;
 	z-index: 1;
+	display: none;
+
+	@media ${device.lg} {
+		display: block;
+	}
 
 	svg {
 		position: absolute;
@@ -109,7 +127,7 @@ const Wave2Layer = styled(ParallaxLayer)`
 
 
 
-class InternetLayer extends Component {
+class ProductLayer extends Component {
 	render() {
 		return (
 			<Fragment>
@@ -145,4 +163,4 @@ class InternetLayer extends Component {
 }
 
 
-export default InternetLayer;
+export default ProductLayer;

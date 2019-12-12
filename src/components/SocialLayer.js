@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
+import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import styled from 'styled-components';
 
 import Social from '../images/social-icons.inline.svg';
@@ -21,15 +21,14 @@ const ContentLayer = styled(ParallaxLayer)`
 	display: grid;
 	grid-template-columns: 1fr;
 	padding: 0 3rem;
+	align-items: center;
+	z-index: 11;
 
 	@media ${device.lg} {
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 6rem;
 		padding: 0;
 	}
-
-	align-items: center;
-	z-index: 11;
 `
 
 const Content = styled.div`
