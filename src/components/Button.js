@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export default styled.button`
-	padding: 25px 40px;
+	padding: 2.5rem 4rem;
 	display: inline-block;
-	font-size: 24px;
+	font-size: 2.4rem;
 	font-weight: bold;
 	color: #ffffff;
 	background: #9499EA;

@@ -6,58 +6,95 @@ import Social from '../images/social-icons.inline.svg';
 import Monitor from '../images/social-monitor.inline.svg';
 import Button from '../components/Button';
 
+import { device } from '../utils/devices';
+
 const BgLayer = styled(ParallaxLayer)`
-	background: linear-gradient(to right, #9499EA 0%, #9499EA 40%, #9499EA 40%, #ffffff 40%, #ffffff 100%);
+	background: #f7f7f7;
+
+	@media ${device.lg} {
+		background: linear-gradient(to right, #9499EA 0%, #9499EA 40%, #9499EA 40%, #ffffff 40%, #ffffff 100%);
+	}
+
 `
 
 const ContentLayer = styled(ParallaxLayer)`
 	display: grid;
-	grid-template-columns: 50% 50%;
-	grid-gap: 60px;
+	grid-template-columns: 1fr;
+	padding: 0 3rem;
+
+	@media ${device.lg} {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 6rem;
+		padding: 0;
+	}
+
 	align-items: center;
 	z-index: 11;
 `
 
 const Content = styled.div`
 	grid-column: 2/3;
-	width: 80%;
+	width: 100%;
+
+	@media ${device.lg} {
+		width: 80%;
+	}
 
 	h1 {
-		font-size: 50px;
+		font-size: 5rem;
 		text-transform: capitalize;
 		line-height: 1.1;
 		color: #20202C;
-		margin-bottom: 30px;
+		margin-bottom: 3rem;
 	}
 
 	p {
-		font-size: 24px;
+		font-size: 2.4rem;
 		line-height: 1.45;
 		color: #20202C;
-		margin-bottom: 30px;
+		margin-bottom: 3rem;
 	}
 `
 
 const IconLayer = styled(ParallaxLayer)`
 	display: grid;
-	grid-template-columns: 40% 60%;
+	grid-template-columns: 1fr;
 	align-items: center;
 	z-index: 2;
 
+	@media ${device.lg} {
+		grid-template-columns: 40% 60%;
+	}
+
 	svg {
 		max-width: 100%;
-		transform: translate(25%, -40%);
+		width: 100%;
+		opacity: .3;
+
+		@media ${device.lg} {
+			transform: translate(25%, -40%);
+			opacity: 1;
+		}
 	}
 `
 const MonitorLayer = styled(ParallaxLayer)`
 	display: grid;
 	align-items: center;
-	grid-template-columns: 40% 60%;
+	grid-template-columns: 1fr;
 	align-items: center;
+
+	@media ${device.lg} {
+		grid-template-columns: 40% 60%;
+	}
 
 	svg {
 		max-width: 100%;
-		transform: translateX(25%);
+		width: 100%;
+		opacity: .3;
+		@media ${device.lg} {
+			transform: translateX(25%);
+			opacity: 1;
+		}
 	}
 `
 

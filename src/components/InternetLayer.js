@@ -124,17 +124,17 @@ class InternetLayer extends Component {
         	</Content>
 				</ContentLayer>
 
-				<BgLayer offset={1} speed={0.1} factor={1}></BgLayer>
+				<BgLayer offset={1} speed={0.1} factor={1.15}></BgLayer>
 
         <PersonLayer offset={1} speed={.8} factor={1}>
 					<Person />
 				</PersonLayer>
 
-				<Wave1Layer offset={1} speed={.1} factor={1}>
+				<Wave1Layer offset={1} speed={.1} factor={1.1}>
 					<Wave1 />
 				</Wave1Layer>
 
-				<Wave2Layer offset={1} speed={.3} factor={1.15}>
+				<Wave2Layer offset={1} speed={.3} factor={1.1}>
 					<Wave2 />
 				</Wave2Layer>
 

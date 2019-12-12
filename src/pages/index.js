@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons';
 import SocialLayer from '../components/SocialLayer';
 import InternetLayer from '../components/InternetLayer';
+import PlanningLayer from '../components/PlanningLayer';
 import Button from '../components/Button';
 
 const StyledParallax = styled(Parallax)`
@@ -26,6 +27,7 @@ class IndexPage extends Component {
         <StyledParallax ref={ref => (this.parallax = ref)} pages={3}>
           <SocialLayer clickHandler={this.clickHandler} />
           <InternetLayer clickHandler={this.clickHandler} />
+          <PlanningLayer clickHandler={this.clickHandler} />
         </StyledParallax>
       </Layout>
     )
